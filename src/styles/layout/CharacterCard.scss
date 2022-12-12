@@ -1,0 +1,28 @@
+@import "../core/Variables.scss";
+
+.item{
+    grid-column-end: span 4;
+    cursor: pointer;
+    &__container{
+        width: 100%;
+        &--img{
+            width: 100%;
+        }
+    }
+    &__info{
+        background-color: $light-blue;
+        width: 100%;
+        padding: 10px 0 10px 0;
+        margin-bottom: 30px;
+        margin-top: -3px;
+        &--name{
+            color: $dark-blue;
+            font-family: $font-family;
+            font-weight: 600;
+        }
+        &--desc{
+            color: $dark-blue;
+            font-family: $font-family;
+        }
+    }
+}

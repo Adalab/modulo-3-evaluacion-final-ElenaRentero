@@ -1,20 +1,21 @@
 function fetchData() {
-    return fetch ('')
+    return fetch ('https://rickandmortyapi.com/api/character')
     .then((response) => response.json())
-    /*.then((data) => {
-        const result = data.results.map((eachData) => {
-            const adalaber = {
-            id: eachData.id,
-            name: eachData.name,
-            counselor: eachData.counselor,
-            promo: eachData.promo,
-            speciality: eachData.speciality,
-            social_networks: eachData.social_networks,
+    .then((data) => {
+        const cleanData = data.results.map((eachData) => {
+            return {
+                id: eachData.id,
+                name: eachData.name,
+                image: eachData.image,
+                species: eachData.species,
+                status: eachData.status,
+                gender: eachData.gender,
+                origin: eachData.origin.name,
+                episode: eachData.episode
             };
-            return adalaber;
         });
-        return result
-    });*/
+        return cleanData;
+    });
 };   
 
 export default fetchData;

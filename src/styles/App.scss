@@ -1,0 +1,15 @@
+@import "./core/Reset.scss";
+
+.App{
+    background-color: black;
+}
+
+.header{
+    padding: 40px;
+    text-align: center;
+    height: 30%;
+    &__img{
+        width: 20%;
+    }
+}
+
