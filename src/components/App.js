@@ -35,7 +35,7 @@ function App() {
         <img className="header__img" src={logo} alt="Rick and Morty" title="Rick and Morty"></img>
       </header>
       <Filters filterName={filterName} filterByName={filterByName} />
-      <CharacterList allCharacters={allCharacters} />
+      {charactersFiltered.length > 0 ? <CharacterList charactersFiltered={charactersFiltered} /> : <h4 className="text">Ningún resultado coincide con su búsqueda.</h4>}
     </div>
   );
 }

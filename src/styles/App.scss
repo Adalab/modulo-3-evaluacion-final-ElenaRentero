@@ -1,15 +1,30 @@
 @import "./core/Reset.scss";
+@import "./core/Variables.scss";
 
-.App{
+*{
     background-color: black;
 }
 
 .header{
-    padding: 40px;
     text-align: center;
     height: 30%;
     &__img{
-        width: 20%;
+        margin-bottom: 30px;
+        width: 350px;
+        @media all and (min-width: 768px){
+            width: 450px;
+        }
+        @media all and (min-width: 1200px){
+            width: 550px; 
+        }
     }
+}
+
+.text{
+    color: $light-blue;
+    font-family: $font-family;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
