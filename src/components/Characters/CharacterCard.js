@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "../styles/layout/CharacterCard.scss";
-import "../styles/core/Variables.scss";
+import "../../styles/layout/CharacterCard.scss";
+import "../../styles/core/Variables.scss";
 
 function CharacterCard({ character }) {
   return (
