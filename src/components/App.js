@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { useLocation, matchPath } from "react-router";
 import "../styles/App.scss";
 import "../styles/core/Reset.scss";
-import logo from "../images/header-img.png";
 import fetchData from "../services/api";
 import CharacterList from "../components/Characters/CharacterList";
 import CharacterDetail from "../components/Characters/CharacterDetail";
@@ -69,14 +68,6 @@ function App() {
   //Return
   return (
     <div className="App">
-      <header className="header">
-        <img
-          className="header__img"
-          src={logo}
-          alt="Rick and Morty"
-          title="Rick and Morty"
-        ></img>
-      </header>
       <Routes>
         <Route
           path="/"

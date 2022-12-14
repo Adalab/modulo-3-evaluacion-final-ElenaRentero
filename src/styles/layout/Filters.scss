@@ -48,3 +48,17 @@
         font-weight: 500;
     }
 }
+
+.reset{
+    border: solid 2px $light-green;
+    background-color: transparent;
+    color: white;
+    padding: 7px 7px 7px 7px;
+    font-family: $font-family;
+    font-weight: 500px;
+    outline: none;
+}
+
+.reset:hover{
+    border-color: $light-blue; 
+}
