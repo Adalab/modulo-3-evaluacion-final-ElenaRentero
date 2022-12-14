@@ -6,7 +6,7 @@ function PageNotFound() {
     <div className="characterContainer">
       <section className="section__intro">
         <h2 className="section__intro--title">Ops!!! Página no encontrada</h2>
-        <Link className="container__link--info" to={"/"}>
+        <Link className="container__link" to={"/"}>
           {" "}
           <i className="fa-solid fa-backward"></i> Volver a inicio{" "}
         </Link>

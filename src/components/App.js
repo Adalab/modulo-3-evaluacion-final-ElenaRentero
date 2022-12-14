@@ -9,6 +9,7 @@ import CharacterList from "../components/Characters/CharacterList";
 import CharacterDetail from "../components/Characters/CharacterDetail";
 import Form from "../components/Filters/Form";
 import PageNotFound from "./PageNotFound";
+import ls from "../services/localStorage";
 
 function App() {
   // Variables estado
@@ -18,29 +19,35 @@ function App() {
   const [filterStatus, setFilterStatus] = useState("All");
 
   // UseEffect: llamada a la API
+
   useEffect(() => {
-    fetchData().then((data) => {
-      setAllCharacters(data);
-    });
-  }, []);
+  fetchData().then((data) => {
+    setAllCharacters(data);
+  });
+}, []);
 
   // Reciben los criterios de filtrado
   const filterByName = (value) => {
+    ls.set('Name', value);
     setFilterName(value);
   };
 
   const filterBySpecie = (value) => {
+    ls.set('Specie', value);
     setFilterSpecie(value);
   };
 
   const filterByStatus = (value) => {
+    ls.set('Status', value);
     setFilterStatus(value);
   };
 
-  /*const handleResetButton = (ev) => {
-    localStorage.clear();
-    window.location.reload();
-  };*/
+  const handleReset = () => {
+    setFilterName('');
+    setFilterSpecie('All');
+    setFilterStatus('All');
+    ls.clear();
+  }
 
   // Filtran el array según los input
   const charactersFiltered = allCharacters
@@ -54,9 +61,10 @@ function App() {
   const { pathname } = useLocation();
   const routeData = matchPath("/CharacterDetail/:characterId", pathname);
   const characterId = routeData !== null ? routeData.params.characterId : "";
-  const foundCharacter = allCharacters.find(
+
+  const foundCharacter = (id) => { return allCharacters.find(
     (character) => character.id === parseInt(characterId)
-  );
+  )};
 
   //Return
   return (
@@ -81,7 +89,7 @@ function App() {
                 filterBySpecie={filterBySpecie}
                 filterStatus={filterStatus}
                 filterByStatus={filterByStatus}
-                /*handleResetButton={handleResetButton}*/
+                handleReset={handleReset}
               />
               {charactersFiltered.length > 0 ? (
                 <CharacterList charactersFiltered={charactersFiltered} />
@@ -95,7 +103,7 @@ function App() {
         />
         <Route
           path="/CharacterDetail/:characterId"
-          element={<CharacterDetail character={foundCharacter} />}
+          element={<CharacterDetail character={foundCharacter}/>}
         />
         <Route path="*" element={<PageNotFound />}/>
       </Routes>

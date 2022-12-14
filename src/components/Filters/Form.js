@@ -3,7 +3,7 @@ import FilterByName from './FilterByName';
 import FilterBySpecie from './FilterBySpecie';
 import FilterByStatus from './FilterByStatus';
 
-function Form({filterName, filterByName, filterSpecie, filterBySpecie, filterStatus, filterByStatus}) {
+function Form({filterName, filterByName, filterSpecie, filterBySpecie, filterStatus, filterByStatus, handleReset}) {
     const handleSubmit = (ev) => {
         ev.preventDefault();
     }
@@ -13,6 +13,7 @@ function Form({filterName, filterByName, filterSpecie, filterBySpecie, filterSta
             <FilterByName filterName={filterName} filterByName={filterByName}/>
             <FilterBySpecie filterSpecie={filterSpecie} filterBySpecie={filterBySpecie}/>
             <FilterByStatus filterStatus={filterStatus} filterByStatus={filterByStatus}/>
+            <button onClick={handleReset} className='reset'>Reset filters</button>
         </form>
     )
 }
