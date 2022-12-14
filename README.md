@@ -10,7 +10,7 @@ El ejercicio consiste en desarrollar una aplicación web sencilla con React que 
 
 ## Funcionamiento
 
-<img width="948" alt="image" src="https://user-images.githubusercontent.com/111798280/207502832-189f396e-c642-489d-8bea-0d168231558e.png">">
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/111798280/207703280-fb19f0f4-b0f7-433e-8778-b3bc6c4986be.png">
 
 - **Visualización de los personajes**: Permite ver en modo listado los personajes de la serie Rick and Morty extraídos de la siguiente API: https://rickandmortyapi.com/api/character. Por cada personaje se visualiza una tarjeta donde se muestra su foto, nombre y especie.
 
