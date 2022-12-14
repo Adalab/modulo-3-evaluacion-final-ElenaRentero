@@ -34,12 +34,6 @@ if (characterFound === undefined){
             </ul>
           </div>
         </div>
-        <div className="article__card__general">
-          <h1>{characterFound.name}</h1>
-          <span className="article__card__general--more">
-            Pasa por encima para obtener más información
-          </span>
-        </div>
       </article>
     </div>
   );
