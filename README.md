@@ -20,7 +20,7 @@ El ejercicio consiste en desarrollar una aplicación web sencilla con React que 
 
 - **Bonus**: Se ha realizado una página accesible y responsive, siguiendo la metodología mobile first utilizando un sistema grid para pintar el listado de personajes. Se ha implementado una URL compartible, permitiendo compartir el detalle de los personajes con otros usuarios, que tendrán acceso al mismo. Además el listado de personajes se ha ordenado alfabéticamente por nombre.
 
-<img width="1000" alt="image" src="https://user-images.githubusercontent.com/111798280/207503654-d0531c38-d106-4e42-b5ca-fa024c53b56b.png">
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/111798280/207712225-70bbd840-5a68-44bb-b897-28806b3f9468.png">
 
 ## Si te gustaría instalarlo, sigue esta guía de inicio rápido
 
