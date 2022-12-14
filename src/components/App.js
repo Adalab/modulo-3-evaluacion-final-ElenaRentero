@@ -8,6 +8,7 @@ import fetchData from "../services/api";
 import CharacterList from "../components/Characters/CharacterList";
 import CharacterDetail from "../components/Characters/CharacterDetail";
 import Form from "../components/Filters/Form";
+import PageNotFound from "./PageNotFound";
 
 function App() {
   // Variables estado
@@ -96,6 +97,7 @@ function App() {
           path="/CharacterDetail/:characterId"
           element={<CharacterDetail character={foundCharacter} />}
         />
+        <Route path="*" element={<PageNotFound />}/>
       </Routes>
     </div>
   );
