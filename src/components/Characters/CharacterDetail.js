@@ -27,8 +27,8 @@ if (characterFound === undefined){
           <div className="article__card__info">
             <ul className="article__card__info--element">
               <li className="element-name">{characterFound.name}</li>
-              <li className="element">Status: {characterFound.status} {character.status === 'Alive' ? <i class="fa-solid fa-heart-pulse"></i> : <i className="fa-solid fa-skull-crossbones"></i>}</li>
-              <li className="element">Species: {characterFound.species} {character.species === 'Alien' ? <i class="fa-brands fa-discord"></i> : <i class="fa-solid fa-person"></i>}</li>
+              <li className="element">Status: {characterFound.status} {characterFound.status === "Alive" ? <i className="fa-solid fa-heart-pulse"></i> : <i className="fa-solid fa-skull-crossbones"></i>}</li>
+              <li className="element">Species: {characterFound.species} {characterFound.species === "Alien" ? <i className="fa-brands fa-discord"></i> : <i className="fa-solid fa-person"></i>}</li>
               <li className="element">Origin: {characterFound.origin}</li>
               <li className="element">Episodes: {characterFound.episode.length}</li>
             </ul>
