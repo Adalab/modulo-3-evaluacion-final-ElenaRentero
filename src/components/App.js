@@ -8,7 +8,6 @@ import CharacterList from "../components/Characters/CharacterList";
 import CharacterDetail from "../components/Characters/CharacterDetail";
 import Form from "../components/Filters/Form";
 import PageNotFound from "./PageNotFound";
-import ls from "../services/localStorage";
 
 function App() {
   // Variables estado
@@ -16,6 +15,7 @@ function App() {
   const [filterName, setFilterName] = useState("");
   const [filterSpecie, setFilterSpecie] = useState("All");
   const [filterStatus, setFilterStatus] = useState("All");
+  const [filterEpisode, setFilterEpisode] = useState(0);
 
   // UseEffect: llamada a la API
 
@@ -27,25 +27,26 @@ function App() {
 
   // Reciben los criterios de filtrado
   const filterByName = (value) => {
-    ls.set('Name', value);
     setFilterName(value);
   };
 
   const filterBySpecie = (value) => {
-    ls.set('Specie', value);
     setFilterSpecie(value);
   };
 
   const filterByStatus = (value) => {
-    ls.set('Status', value);
     setFilterStatus(value);
+  };
+
+  const filterByEpisode = (value) => {
+    setFilterEpisode(value);
   };
 
   const handleReset = () => {
     setFilterName('');
     setFilterSpecie('All');
     setFilterStatus('All');
-    ls.clear();
+    setFilterEpisode(0);
   }
 
   // Filtran el array según los input
@@ -55,7 +56,8 @@ function App() {
     .filter((eachCharacter) =>
       filterSpecie === "All" ? true : eachCharacter.species === filterSpecie)
     .filter((character) => filterStatus === "All" ? true : character.status === filterStatus)
-
+    .filter((character) => filterEpisode === 0 ? true : character.episode.length === parseInt(filterEpisode))
+   
   // Rutas
   const { pathname } = useLocation();
   const routeData = matchPath("/CharacterDetail/:characterId", pathname);
@@ -80,6 +82,8 @@ function App() {
                 filterBySpecie={filterBySpecie}
                 filterStatus={filterStatus}
                 filterByStatus={filterByStatus}
+                filterEpisode={filterEpisode}
+                filterByEpisode={filterByEpisode}
                 handleReset={handleReset}
               />
               {charactersFiltered.length > 0 ? (
